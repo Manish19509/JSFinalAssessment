@@ -1,6 +1,6 @@
 /*
 Assessment Requirements
-1. Create a variable that can hold a number of NFT's. What type of variable might this be?
+1. Create a variable that c\tan hold a number of NFT's. What type of variable might this be?
 2. Create an object inside your mintNFT function that will hold the metadata for your NFTs. 
    The metadata values will be passed to the function as parameters. When the NFT is ready, 
    you will store it in the variable you created in step 1
@@ -13,12 +13,12 @@ const NFTs =[]
 // this function will take in some values as parameters, create an
 // NFT object using the parameters passed to it for its metadata, 
 // and store it in the variable above.
-function mintNFT (_name,_eyecolor,_shirtType,_bling) {
+function mintNFT (_name,_hairColor,_speciality,_strength) {
 const NFT={
     "name": _name,
-    "eyecolor":_eyecolor,
-    "shirtType":_shirtType,
-    "bling":_bling, 
+    "hairColor":_hairColor,
+    "speciality":_speciality,
+    "strength":_strength, 
 }
 NFTs.push(NFT);
 console.log("Minted: "+ _name);
@@ -27,14 +27,15 @@ console.log("Minted: "+ _name);
 // create a "loop" that will go through an "array" of NFT's
 // and print their metadata with console.log()
 function listNFTs () {
-for(let i =0; i<NFTs.length;i++){
-    // console.log(NFTs[i]);
-    console.log("\nID: \t\t\t\t" + (i+1));
-    console.log("Name: \t\t\t" + NFTs[i].name);
-    console.log("Eyecolor: \t" + NFTs[i].eyecolor);
-    console.log("Shirt Type: " + NFTs[i].shirtType);
-    console.log("Bling: \t\t\t" + NFTs[i].bling);
-}
+    let i=0;
+    while(i<NFTs.length){
+        console.log("\nID: \t" + (i+1));
+        console.log("Name: \t\t" + NFTs[i].name);
+        console.log("hairColor: \t" + NFTs[i].hairColor);
+        console.log("Speciality: " + NFTs[i].speciality);
+        console.log("strength: \t" + NFTs[i].strength);
+        i++;        
+    }
 }
 
 // print the total number of NFTs we have minted to the console
@@ -44,9 +45,9 @@ console.log("\n" + NFTs.length)
 
 // call your functions below this line
 
-mintNFT("Bob","Blue","Hoodie","Gold chain");
-mintNFT("Sue","Blue","Hoodie","Gold chain");
-mintNFT("Tim","Blue","Hoodie","Gold chain");
-mintNFT("Jogin","Blue","Hoodie","Gold chain");
+mintNFT("joj","Blue","Good Cook","Critical Thinking");
+mintNFT("joy","Red","Good Coder","Problem Solving");
+mintNFT("jack","Black","Singer","Adaptability");
+mintNFT("Manish","White","Dancer","Optimism");
 listNFTs();
 getTotalSupply();
